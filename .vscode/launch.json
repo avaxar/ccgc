@@ -1,0 +1,42 @@
+// VS Code launch configuration to execute and debug
+{
+    "version": "2.0.0",
+    "configurations": [
+        {
+            "name": "Debugging",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/example.out",
+            "preLaunchTask": "Build",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            // Windows specific overrides
+            "windows": {
+                "name": "Debugging",
+                "type": "cppdbg",
+                "request": "launch",
+                // With .exe extension
+                "program": "$${workspaceFolder}/example.exe",
+            },
+            // Mac specific overrides
+            "osx": {
+                "name": "Debugging",
+                "type": "cppdbg",
+                "request": "launch",
+                "program": "${workspaceFolder}/example.out",
+                "MIMode": "lldb", // Use lldb on Mac
+            },
+        }
+    ]
+}
