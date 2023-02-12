@@ -25,5 +25,9 @@ size_t ccgc_collect(void);
 /// @brief Merges consecutive free blocks in the CCGC heap for faster `ccgc_malloc` calls in the future
 void ccgc_desegment(void);
 
+/// @brief Resets the CCGC heap, deleting every block, filling the heap with zeroes. Any pointer still
+/// pointing to the CCGC heap is considered invalid.
+void ccgc_resetPage(void);
+
 /// @brief Logs every block in the CCGC heap, along with its use-status, size, and content, to `stdout`
 void ccgc_dumpPage(void);

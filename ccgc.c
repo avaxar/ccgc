@@ -3,6 +3,7 @@
 #include <stdalign.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <string.h>
 
 #include "ccgc.h"
 
@@ -257,6 +258,10 @@ void ccgc_desegment(void) {
             block->size += sizeof(Block) + next_block->size;
         }
     }
+}
+
+void ccgc_resetPage(void) {
+    memset(page, 0, sizeof(page));
 }
 
 void ccgc_dumpPage(void) {

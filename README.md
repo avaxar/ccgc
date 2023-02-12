@@ -10,4 +10,5 @@
 - `ccgc_free` - frees GC heap memory
 - `ccgc_collect` - collects and frees unreachable blocks
 - `ccgc_desegment` - desegments/merges consecutive free blocks in the GC heap
+- `ccgc_resetPage` - resets GC heap with zeroes, removing every block in the heap
 - `ccgc_dumpPage` - prints every block in the GC heap, with its use-status, size, and content

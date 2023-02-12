@@ -37,10 +37,12 @@ void gcTest(void) {
 
 int main(int argc, const char* argv[]) {
     printf("Allocation test with `ccgc_malloc` and `ccgc_free`...\n\n");
+    ccgc_resetPage();
     allocTest();
 
     printf("\n\n");
 
     printf("Garbage collection test with `ccgc_malloc`, `ccgc_collect`, and `ccgc_desegment`...\n\n");
+    ccgc_resetPage();
     gcTest();
 }
